@@ -1,0 +1,32 @@
+.image-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    
+}
+.image-box{
+    text-align: center; /* Centra el texto con la imagen */
+    width: 30%; /* Controla el tamaño de cada imagen */
+}
+
+.image-box img {
+width: 100%;
+max-width: 3000px;
+height: auto;
+border-radius: 10px;
+transition: transform 0.3s ease-in-out;
+cursor: pointer;
+}
+.image-box img:hover{
+    transform: scale(1.1); /* Aumenta el tamaño un 20% */
+}
+.image-desc{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+}

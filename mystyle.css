@@ -1,0 +1,274 @@
+/*global*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial;
+    background-color: #6b6767;
+    color: white;
+}
+
+p {
+    line-height: 1.5;
+}
+
+a {
+    color: rgb(15, 1, 1);
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+
+
+.tabla-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(106, 3, 132, 0.1);
+}
+
+
+
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 2rem;
+    width: 100%;
+}
+
+
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #d98bfd;
+    font-size: 1rem;
+}
+
+
+
+
+th {
+    background-color: #994caf;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+tbody tr:nth-child(even) {
+    background-color: #edccff;
+    color: #000;
+}
+
+
+
+
+tbody tr:hover {
+    background-color: #6f28e9;
+    color: #000;
+    
+}
+
+
+
+
+.active {
+    color: rgb(56, 7, 92);
+    font-weight: bold;
+}
+
+.text-primario {
+    color: #3c3939;
+}
+
+.text--secondary {
+    color: rgb(60, 51, 179);
+}
+
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+.menu-nav {
+    height: 60px;
+    background-color: white;
+    padding-left: 20px;
+}
+
+.menu-nav a {
+    margin-right: 30px;
+}
+
+.menu-nav a:hover {
+    color: rgb(31, 5, 67);
+}
+
+
+/*header*/
+
+.my-info {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.my-info img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.my-info h1 {
+    font-weight: 400;
+    font-size: 42px;
+}
+
+.my-info p {
+    font-size: 22px;
+}
+
+
+
+
+.main-flex {
+    display: flex;
+    /* Defaul en fila */
+    /*flex-direction: row; */
+    /* Horizintal */
+    justify-content: space-between;
+    /* Vertical */
+    align-items: center;
+    height: 70vh;
+}
+
+.header {
+    width: 50%;
+}
+
+.interests-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 20px;
+}
+
+.interests-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+
+.interests-group h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    color: #3353b3;
+}
+
+.interests-group ul {
+    padding-left: 20px;
+    justify-content: left;
+    margin: 0;
+}
+
+.interests-group li {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #a8c4cd;
+}
+
+.interests-group li:hover {
+    color: #333eb3;
+    cursor: pointer;
+}
+
+
+/* publications*/
+
+.publication-title {
+    color: rgb(168, 51, 179);
+    font-size: 24px;
+}
+
+.publication-authors {
+    font-size: 14px;
+    color: #771376;
+}
+
+.publication-link {
+    color: rgb(48, 12, 121);
+    border: 1px solid rgb(79, 35, 108);
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.publication-title:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.publication-authors:hover {
+    color: rgb(73, 58, 92);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.publication-link:hover {
+    background-color: rgb(114, 12, 121);
+    color: white;
+}
+
+@media(max-width:768px){
+    body{
+        background-color: #d7d7d7;
+    }
+    a{
+        display: none;
+    }
+}
+ 
+/*en terminal
+
+git add .
+git commit -m "etiqueta version"
+git push */
+
+/* en el navegador*/
+
+/*actualizar repositorio de github*/

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Creadores de Contenido | AXIA AI</title>
+    <style>
+        .creator img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .creator {
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: white;
+            transition: transform 0.3s ease-in-out;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .creator:hover {
+            transform: scale(1.03);
+        }
+
+        .match-button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light menu-nav">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="cc.html">Creadores de Contenido</a></li>
+                    <li class="nav-item"><a class="nav-link" href="brands.html">Marcas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Registro</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center py-5">
+        <h1>Creadores de Contenido</h1>
+        <p class="fs-5">Conoce a los innovadores y creativos que están redefiniendo la creación de contenido en nuestra plataforma.</p>
+    </header>
+
+    <main class="container my-5">
+        <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+            
+            <div class="col d-flex justify-content-center">
+                <div class="creator shadow-sm">
+                    <img src="juan.png" alt="Perfil de Juan Pérez">
+                    <div class="p-3">
+                        <h2>Juan Pérez</h2>
+                        <p>Fotógrafo y videógrafo especializado en contenido de viajes y aventura. Su pasión por capturar paisajes impresionantes ayuda a las marcas a contar historias visuales poderosas.</p>
+                        <button class="btn match-button">Match</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+                <div class="creator shadow-sm">
+                    <img src="maria.png" alt="Perfil de María López">
+                    <div class="p-3">
+                        <h2>María López</h2>
+                        <p>Experta en estilo de vida sostenible y moda ética. Su enfoque auténtico involucra a audiencias comprometidas con el cambio positivo en sus hábitos de consumo.</p>
+                        <button class="btn match-button">Match</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+                <div class="creator shadow-sm">
+                    <img src="creador3.jpg" alt="Perfil de Carlos Ramírez">
+                    <div class="p-3">
+                        <h2>Carlos Ramírez</h2>
+                        <p>Especialista en tecnología y gadgets. Su contenido educativo y entretenido ayuda a las marcas tecnológicas a conectar con audiencias jóvenes y curiosas.</p>
+                        <button class="btn match-button">Match</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center">
+                <div class="creator shadow-sm">
+                    <img src="creator4.jpeg" alt="Perfil de Sofía Méndez">
+                    <div class="p-3">
+                        <h2>Sofía Méndez</h2>
+                        <p>Creadora de contenido de bienestar y fitness. Con un enfoque motivador, Sofía inspira a su comunidad a llevar un estilo de vida saludable.</p>
+                        <button class="btn match-button">Match</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-light text-center py-4 mt-5">
+        <p>© 2025 AXIA AI. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
