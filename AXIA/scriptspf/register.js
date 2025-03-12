@@ -1,65 +1,80 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const creatorForm = document.getElementById("creatorForm");
-    const brandForm = document.getElementById("brandForm");
-    const userList = document.getElementById("userList");
+document.addEventListener("DOMContentLoaded", function() {
+    // Obtener registros almacenados en localStorage o inicializar arreglo vacío
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    class Usuario {
-        constructor(tipo, nombre, email, extra) {
-            this.tipo = tipo; // "Creador" o "Marca"
-            this.nombre = nombre;
-            this.email = email;
-            this.extra = extra; // Biografía para creadores, Industria para marcas
-        }
+    // Función para registrar un nuevo usuario
+    function registerUser(form, userType) {
+        const formData = new FormData(form);
+        const user = Object.fromEntries(formData.entries());
+        user.type = userType; // Agregar tipo de usuario (Creador o Marca)
+        users.push(user); // Agregar usuario a la lista
+
+        // Guardar en localStorage
+        localStorage.setItem("users", JSON.stringify(users));
+
+        // Mostrar usuarios en pantalla
+        displayUsers();
+
+        // Alerta de registro exitoso
+        alert("Registro exitoso");
+
+        // Limpiar formulario
+        form.reset();
     }
 
-    let usuarios = [];
+    // Función para mostrar los usuarios en pantalla
+    function displayUsers() {
+        const userList = document.getElementById("userList");
+        userList.innerHTML = ""; // Limpiar la lista antes de actualizar
 
-    function agregarUsuario(usuario) {
-        usuarios.push(usuario);
-        actualizarListaUsuarios();
-    }
-
-    function actualizarListaUsuarios() {
-        userList.innerHTML = "";
-        usuarios.forEach((usuario, index) => {
-            const listItem = document.createElement("li");
+        users.forEach((user, index) => {
+            let listItem = document.createElement("li");
             listItem.classList.add("list-group-item");
             listItem.innerHTML = `
-                <strong>${usuario.tipo}:</strong> ${usuario.nombre} <br>
-                <strong>Email:</strong> ${usuario.email} <br>
-                <strong>${usuario.tipo === "Creador" ? "Biografía" : "Industria"}:</strong> ${usuario.extra}
-                <button class="btn btn-danger btn-sm float-end" onclick="eliminarUsuario(${index})">Eliminar</button>
+                ${user.type}: ${user.name || user.company_name} - ${user.email || user.company_email}
+                <button class='btn btn-warning btn-sm' onclick='deleteUser(${index})'>Eliminar</button>
             `;
             userList.appendChild(listItem);
         });
     }
 
-    window.eliminarUsuario = function(index) {
-        usuarios.splice(index, 1);
-        actualizarListaUsuarios();
-    };
+    // Función para eliminar un usuario específico
+    function deleteUser(index) {
+        users.splice(index, 1); // Eliminar usuario de la lista
+        localStorage.setItem("users", JSON.stringify(users)); // Actualizar localStorage
+        displayUsers(); // Actualizar la pantalla
+    }
 
-    creatorForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const bio = document.getElementById("bio").value;
-        
-        const nuevoCreador = new Usuario("Creador", name, email, bio);
-        agregarUsuario(nuevoCreador);
-        
-        creatorForm.reset();
-    });
+    // Función para borrar todos los registros del localStorage
+    function clearStorage() {
+        localStorage.removeItem("users");
+        users = [];
+        displayUsers();
+    }
 
-    brandForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const companyName = document.getElementById("company_name").value;
-        const companyEmail = document.getElementById("company_email").value;
-        const industry = document.getElementById("industry").value;
+    // Eventos para capturar el envío de formularios
+    const creatorForm = document.getElementById("creatorForm");
+    const brandForm = document.getElementById("brandForm");
+    const clearButton = document.getElementById("clearButton");
 
-        const nuevaMarca = new Usuario("Marca", companyName, companyEmail, industry);
-        agregarUsuario(nuevaMarca);
-        
-        brandForm.reset();
-    });
+    if (creatorForm) {
+        creatorForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            registerUser(this, "Creador de Contenido");
+        });
+    }
+
+    if (brandForm) {
+        brandForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            registerUser(this, "Marca");
+        });
+    }
+
+    if (clearButton) {
+        clearButton.addEventListener("click", clearStorage);
+    }
+
+    // Mostrar usuarios guardados al cargar la página
+    displayUsers();
 });
