@@ -7,27 +7,29 @@
     <link rel="stylesheet" href="style.css">
     <title>Creadores de Contenido | AXIA AI</title>
     <style>
+        .creators-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
         .creator img {
             width: 100%;
             height: 300px;
             object-fit: cover;
             border-radius: 10px 10px 0 0;
         }
-
         .creator {
             text-align: center;
             border: 1px solid #ddd;
             border-radius: 10px;
             background-color: white;
             transition: transform 0.3s ease-in-out;
-            max-width: 400px;
-            margin: auto;
+            width: 100%;
         }
-
         .creator:hover {
             transform: scale(1.03);
         }
-
         .match-button {
             margin-top: 10px;
         }
@@ -58,52 +60,39 @@
     </header>
 
     <main class="container my-5">
-        <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
-            
-            <div class="col d-flex justify-content-center">
-                <div class="creator shadow-sm">
-                    <img src="juan.png" alt="Perfil de Juan Pérez">
-                    <div class="p-3">
-                        <h2>Juan Pérez</h2>
-                        <p>Fotógrafo y videógrafo especializado en contenido de viajes y aventura. Su pasión por capturar paisajes impresionantes ayuda a las marcas a contar historias visuales poderosas.</p>
-                        <button class="btn match-button">Match</button>
-                    </div>
+        <div class="creators-grid">
+            <div class="creator shadow-sm">
+                <img src="juan.png" alt="Perfil de Juan Pérez">
+                <div class="p-3">
+                    <h2>Juan Pérez</h2>
+                    <p>Fotógrafo y videógrafo especializado en contenido de viajes y aventura.</p>
+                    <button class="btn match-button">Match</button>
                 </div>
             </div>
-
-            <div class="col d-flex justify-content-center">
-                <div class="creator shadow-sm">
-                    <img src="maria.png" alt="Perfil de María López">
-                    <div class="p-3">
-                        <h2>María López</h2>
-                        <p>Experta en estilo de vida sostenible y moda ética. Su enfoque auténtico involucra a audiencias comprometidas con el cambio positivo en sus hábitos de consumo.</p>
-                        <button class="btn match-button">Match</button>
-                    </div>
+            <div class="creator shadow-sm">
+                <img src="maria.png" alt="Perfil de María López">
+                <div class="p-3">
+                    <h2>María López</h2>
+                    <p>Experta en estilo de vida sostenible y moda ética.</p>
+                    <button class="btn match-button">Match</button>
                 </div>
             </div>
-
-            <div class="col d-flex justify-content-center">
-                <div class="creator shadow-sm">
-                    <img src="creador3.jpg" alt="Perfil de Carlos Ramírez">
-                    <div class="p-3">
-                        <h2>Carlos Ramírez</h2>
-                        <p>Especialista en tecnología y gadgets. Su contenido educativo y entretenido ayuda a las marcas tecnológicas a conectar con audiencias jóvenes y curiosas.</p>
-                        <button class="btn match-button">Match</button>
-                    </div>
+            <div class="creator shadow-sm">
+                <img src="creador3.jpg" alt="Perfil de Carlos Ramírez">
+                <div class="p-3">
+                    <h2>Carlos Ramírez</h2>
+                    <p>Especialista en tecnología y gadgets.</p>
+                    <button class="btn match-button">Match</button>
                 </div>
             </div>
-
-            <div class="col d-flex justify-content-center">
-                <div class="creator shadow-sm">
-                    <img src="creator4.jpeg" alt="Perfil de Sofía Méndez">
-                    <div class="p-3">
-                        <h2>Sofía Méndez</h2>
-                        <p>Creadora de contenido de bienestar y fitness. Con un enfoque motivador, Sofía inspira a su comunidad a llevar un estilo de vida saludable.</p>
-                        <button class="btn match-button">Match</button>
-                    </div>
+            <div class="creator shadow-sm">
+                <img src="creator4.jpeg" alt="Perfil de Sofía Méndez">
+                <div class="p-3">
+                    <h2>Sofía Méndez</h2>
+                    <p>Creadora de contenido de bienestar y fitness.</p>
+                    <button class="btn match-button">Match</button>
                 </div>
             </div>
-
         </div>
     </main>
 
@@ -115,4 +104,3 @@
 
 </body>
 </html>
-
